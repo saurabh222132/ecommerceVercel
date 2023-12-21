@@ -1,0 +1,24 @@
+.post("/login", passport.authenticate("local"), loginUser) 
+
+> for the very first time we will see the user with all data means serialize funtion is not run
+so we get all data in res.
+
+and after the first response the serialize funtion run and we see the only id and user (whatever we have mentioned in that functions.)
+
+ex : response when user login for first time 
+  
+user :  {
+  _id: new ObjectId("6577144395eb83ec6d78d86d"),
+  email: 'skv222132@gmail.com',
+  password: 'Saurabh@222',
+  role: 'user',
+  addresses: [],
+  orders: [],
+  __v: 0
+}
+
+>>>>after the login 
+
+ user : { id: '6577144395eb83ec6d78d86d', role: 'user' }
+
+       > serialize funtion eleminates other unnessasary data.
